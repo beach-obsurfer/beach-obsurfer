@@ -1,1 +1,14 @@
-@import '~bootstrap/scss/bootstrap.scss';
+@import "style";
+
+.App {
+  background-color: $background-color;
+}
+
+h1 {
+  font-family: $font-primary;
+  }
+
+h2 {
+    font-family: $font-secondary;
+  }
+
