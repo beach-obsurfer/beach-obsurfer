@@ -1,37 +1,56 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.scss";
-import BeachPage from "./components/BeachPage";
+import axios from "axios";
+import BeachDetail from "./components/BeachDetail";
 import Home from "./components/Home";
 
-function App() {
-  return (
-    <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/beach">Beach</Link>
-            </li>
-          </ul>
-        </nav>
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      beaches: [],
+    };
+  }
 
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
+  componentDidMount() {
+    this.getBeaches();
+  }
+
+  getBeaches() {
+    const apiKey = "key=xaJX84ccYJ93CJwroxGVNlxvHshmxJVV";
+    const showRegions = "list?show=regions";
+    const apiCountry = "country=PT";
+    const apiBeaches = "category=beach";
+    const apiLimit = "limit=50";
+    const apiNearby = "nearby={lat},{lng},{radius}";
+    const apiExclude = "exclude={webcamid}[,{webcamid}...]";
+    const apiPopularity = "orderby=popularity";
+    const apiShowImageLocation = "?show=webcams:location,image";
+    const url = `https://api.windy.com/api/webcams/v2/list/${apiCountry}/${apiLimit}/${apiBeaches}/${apiPopularity}?show=webcams:image,location,player&${apiKey}`;
+
+    axios.get(url).then((response) => {
+      console.log(response.data.result.webcams[0]);
+      this.setState({
+        beaches: response.data.result.webcams,
+      });
+    });
+  }
+
+  render() {
+    return (
+      <Router>
         <Switch>
-          <Route path="/beach">
-            <BeachPage />
+          <Route exact path="/">
+            <Home apiBeaches={this.state.beaches} />
           </Route>
-          <Route path="/">
-            <Home />
+          <Route path="/beach/:beachId">
+            <BeachDetail />
           </Route>
         </Switch>
-      </div>
-    </Router>
-  );
+      </Router>
+    );
+  }
 }
 
 export default App;
