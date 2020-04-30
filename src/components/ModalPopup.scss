@@ -1,0 +1,52 @@
+@import "../style";
+
+.modal-content {
+    border-radius: 20px;
+    padding: 40px 10px;
+    text-align: center;
+    align-items: center;
+}
+
+.modal-search {
+    color: $blue;
+    button {
+        width: 82px;
+        background-image: $button;
+        border: 0;
+        border-radius: 10px;
+        margin-top: 40px;
+        padding: 8px 20px;
+        color: white;
+        position: relative;
+        z-index: 1;
+        transition: background-image 0.3s ease-in-out;
+        @media (max-width: 576px) {
+            width: 50%;
+            margin-bottom: 10px;
+            text-align: center;
+            }
+        &:before {
+            content: "";
+            position: absolute;
+            border-radius: 10px;
+            color: white;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            transition: background-image 0.3s ease-in-out;
+            background-image: $button-hover;
+            z-index: -1;
+            transition: opacity 0.3s linear;
+            opacity: 0;
+            }
+        &:hover {
+            &:before {
+                content: "";
+                opacity: 1;
+                transition: opacity 0.3s linear;
+            }
+            }
+
+    }
+}
