@@ -1,17 +1,22 @@
 import React from 'react';
+import { Container, Row, Col } from "react-bootstrap";
  
  
 function SearchBar({ input, inputChangeHandler, inputSubmitHandler }) {
   return (
-      <div>
-          <input
-              id="input"
-              placeholder={input}
-              value={input}
-              onChange={inputChangeHandler}
-          />
-          <button onClick={inputSubmitHandler}>Search Beach In Portugal</button>
-      </div>
+        <Container >
+          <Row>
+            <Col>
+              <input
+                  id="input"
+                  placeholder="Type in city or beach"
+                  value={input}
+                  onChange={inputChangeHandler}
+              />
+            <button onClick={inputSubmitHandler}>Search</button>
+           </Col>
+          </Row>
+        </Container>
   )
 }
  
