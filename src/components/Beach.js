@@ -1,17 +1,32 @@
 import React from "react";
-import Card from "react-bootstrap/Card";
+import { Card } from "react-bootstrap";
+import surficon from '../image/surf.svg';
+import beachicon from '../image/beach.svg';
+import peticon from '../image/pet.svg';
+import coffeeicon from '../image/coffee.svg';
 
-const Beach = ({ key, title, image, player }) => {
+const Beach = ({ title, image, player }) => {
   return (
-    <div id={key}>
-      <Card style={{ width: "18rem" }}>
-        <Card.Img variant="top" src={image} />
-        <Card.Body>
-          <Card.Title>{title}</Card.Title>
-          <Card.Text>Beach description</Card.Text>
-        </Card.Body>
-      </Card>
-    </div>
+    <Card>
+      <Card.Img src={image} alt={title} />
+      <Card.ImgOverlay>
+        <Card.Title>{title}</Card.Title>
+        <ul>
+          <li>
+            <img src={surficon} alt="surf icon" className="card-icon surf-icn" />
+          </li>
+          <li>
+            <img src={beachicon} alt="beach icon" className="card-icon beach-icn" />
+          </li>
+          <li>
+            <img src={peticon} alt="pet icon" className="card-icon pet-icn" />
+          </li>
+          <li>
+            <img src={coffeeicon} alt="coffee icon" className="card-icon coffee-icn" />
+          </li>
+        </ul>
+      </Card.ImgOverlay>
+    </Card>
   );
 };
 
