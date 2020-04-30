@@ -1,56 +1,59 @@
 @import '../style';
 
 .beach-detail {
-  width: 100%;
-  background-image: $background-image;
-  padding: 50px 0 0 0;
+    width: 100%;
+    height: 100vh;
+    background-image: $background-image;
+     padding: 50px 0 0 0;
 
-  header {
-    .back-btn {
-      font-size: 0.8rem;
-      display: block;
-    }
+    header {
+        .back-btn {
+            font-size: 0.8rem;
+            display: block;
+        }
 
-    .logo {
-      width: 150px;
-      display: block;
-    }
+        .logo {
+            width: 150px;
+            display: block;
+        }
 
-    .arrow-left-icon {
-      height: 12px;
-      margin-right: 5px;
-      vertical-align: middle;
-    }
+        .arrow-left-icon {
+            height: 12px;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
 
-    h1 {
-      font-size: 3.4rem;
-      font-family: $font-primary;
-      font-weight: 100;
-      color: $blue;
-      padding: 30px 0 10px 0;
-      text-align: center;
+        h1 {
+            font-size: 3.4rem;
+            font-family: $font-primary;
+            font-weight: 100;
+            color: $blue;
+            padding: 30px 0 10px 0;
+            text-align: center;
 
-      @media (max-width: 767px) {
-        font-size: 2.2rem;
-      }
-    }
+            @media (max-width: 767px) {
+                font-size: 2.2rem;
+            }
+        }
 
-    .icons-wrapper {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      list-style: none;
-      margin: 0 -20px 50px -20px;
-      padding: 0;
-      font-size: 1rem;
-      font-family: $font-secondary;
-      font-weight: 100;
-      color: $blue;
+        .icons-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            list-style: none;
+            margin: 0 -20px 50px -20px;
+            padding: 0;
+            font-size: 1rem;
+            font-family: $font-secondary;
+            font-weight: 100;
+            color: $blue;
 
-      @media (max-width: 767px) {
-        font-size: 0.8rem;
-        margin: 0 -10px 35px -10px;
-      }
+            @media (max-width: 767px) {
+                font-size: 0.8rem;
+                margin: 0 -10px 35px -10px;
+            }
+
+
 
       li {
         padding: 0 20px;
