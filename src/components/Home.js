@@ -5,46 +5,48 @@ import { Container, Row, Col } from "react-bootstrap";
 import logo from "../image/logotipo.svg";
 import "./Home.scss";
 import SearchBar from "./SearchBar";
-import axios from "axios";
+import ModalPopup from "./ModalPopup";
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       searchBeachValue: "",
-      beaches: "",
+      isPopupShowing: false,
     };
   }
+
+  handleModal = () => {     
+      const { isPopupShowing } = this.state;     
+      this.setState({ isPopupShowing: !isPopupShowing });   
+    };
 
   handleChange = (event) => {
     this.setState({ searchBeachValue: event.target.value });
   };
 
   handleSubmit = () => {
-    const apiKey = "key=xaJX84ccYJ93CJwroxGVNlxvHshmxJVV";
-    const apiCountry = "country=PT";
-    const apiBeaches = "category=beach";
-    const apiLimit = "limit=50";
-    const apiPopularity = "orderby=popularity";
-    const url = `https://api.windy.com/api/webcams/v2/list/${apiCountry}/${apiLimit}/${apiBeaches}/${apiPopularity}?show=webcams:image,location,player&${apiKey}`;
 
     let searchBeachValue = this.state.searchBeachValue;
 
-    axios.get(url).then((response) => {
-      let beaches = response.data.result.webcams;
-      beaches = beaches.filter((beach) => {
-        if (
-          beach.location.city.toLowerCase() === searchBeachValue.toLowerCase()
-        ) {
-          return beach;
-        } else if (
-          beach.title.toLowerCase().includes(searchBeachValue.toLowerCase())
-        ) {
-          return beach;
+     let beaches = this.props.apiBeaches;
+
+        beaches = beaches.filter((beach) => {
+            if (
+                beach.location.city.toLowerCase() === searchBeachValue.toLowerCase() ||
+                beach.title.toLowerCase().includes(searchBeachValue.toLowerCase())
+              ) {
+                return beach;
+                } 
+              }
+        )
+        console.log(beaches)
+
+        if (!beaches.length) {
+            this.handleModal();         
+        } else { 
+            this.props.updateBeachHandler(beaches);
         }
-      });
-      this.props.updateBeachHandler(beaches);
-    });
   };
 
   render() {
@@ -73,6 +75,7 @@ class Home extends React.Component {
                 inputChangeHandler={this.handleChange}
                 inputSubmitHandler={this.handleSubmit}
               />
+            <ModalPopup city={this.state.searchBeachValue} show={this.state.isPopupShowing} handlemodal={this.handleModal} />
             </Col>
           </Row>
           <Row>
