@@ -178,11 +178,6 @@ class BeachDetail extends React.Component {
                   ></iframe>
                 </Col>
               </Row>
-              <Row>
-                <Col xs={12} sm={12} md={12} lg={12}>
-                  <Footer />
-                </Col>
-              </Row>
             </Container>
             <Footer />
           </div>
