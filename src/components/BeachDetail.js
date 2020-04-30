@@ -10,7 +10,7 @@ import beachicon from "../image/beach-blue.svg";
 import coffeeicon from "../image/coffee-blue.svg";
 import peticon from "../image/pet-blue.svg";
 import logo from "../image/logotipo.svg";
-import wavesicon from "../image/waves-bluelight.svg";
+import wavesicon from "../image/waves-orange.svg";
 
 class BeachDetail extends React.Component {
   constructor(props) {
@@ -91,6 +91,16 @@ class BeachDetail extends React.Component {
                     lg={{ span: 8, offset: 2 }}
                   >
                     <h1>{this.state.title}</h1>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col
+                    className="text-center"
+                    xs={12}
+                    sm={12}
+                    md={12}
+                    lg={{ span: 10, offset: 1 }}
+                  >
                     <ul className="icons-wrapper">
                       <li>
                         <img src={localizationicon} alt="localization icon" />
@@ -117,17 +127,23 @@ class BeachDetail extends React.Component {
                 </Row>
                 <Row>
                   <Col className="text-center" xs={12} sm={12} md={12} lg={12}>
-                    <img src={wavesicon} alt="waves icon" className="waves-icon" />
+                    <img
+                      src={wavesicon}
+                      alt="waves icon"
+                      className="waves-icon"
+                    />
                   </Col>
                 </Row>
               </header>
             </Col>
           </Row>
           <Row>
-            <Col  xs={12}
-                    sm={{ span: 10, offset: 1 }}
-                    md={{ span: 8, offset: 2 }}
-                    lg={{ span: 6, offset: 3 }}>
+            <Col
+              xs={12}
+              sm={{ span: 10, offset: 1 }}
+              md={{ span: 8, offset: 2 }}
+              lg={{ span: 6, offset: 3 }}
+            >
               <p>
                 Portugal is famed for its beautiful beaches, and along the 1,794
                 km of coastline are found some of Europe’s finest beaches. These
@@ -140,10 +156,10 @@ class BeachDetail extends React.Component {
             </Col>
           </Row>
           <Row>
-            <Col xs={12} sm={12} md={12} lg={12}>
+            <Col className="text-center" xs={12} sm={12} md={12} lg={12}>
               <iframe
-                width="300"
-                height="200"
+                width="90%"
+                height="500px"
                 src={this.state.playerLifetimeEmbed}
               ></iframe>
             </Col>
