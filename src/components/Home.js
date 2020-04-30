@@ -4,8 +4,51 @@ import Beach from "./Beach";
 import { Container, Row, Col } from "react-bootstrap";
 import logo from "../image/logotipo.svg";
 import "./Home.scss";
+import SearchBar from './SearchBar';
+import axios from 'axios';
 
-const Home = ({ apiBeaches }) => {
+class Home extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            searchBeachValue: '',
+            beaches: ''
+        }
+    }
+
+    handleChange = (event) => {
+        this.setState({ searchBeachValue: event.target.value })
+        }
+     
+    handleSubmit = () => {
+        const apiKey = 'key=xaJX84ccYJ93CJwroxGVNlxvHshmxJVV';
+        const apiCountry = 'country=PT';
+        const apiBeaches = 'category=beach';
+        const apiLimit = 'limit=50';
+        const apiPopularity = 'orderby=popularity';
+        const url = `https://api.windy.com/api/webcams/v2/list/${apiCountry}/${apiLimit}/${apiBeaches}/${apiPopularity}?show=webcams:image,location,player&${apiKey}`;
+
+        let searchBeachValue = this.state.searchBeachValue;
+
+        axios.get(url).then((response) => {
+            let beaches = response.data.result.webcams;
+            beaches = beaches.filter(beach => {
+               if (beach.location.city.toLowerCase() === searchBeachValue.toLowerCase()) {
+                    return beach
+               } else if (
+                  beach.title.toLowerCase().includes(searchBeachValue.toLowerCase()) 
+               ){
+                return beach
+               } 
+            })
+            this.props.updateBeachHandler(beaches);
+            })
+        }
+    
+
+
+    render() {
+        const { apiBeaches } = this.props;
   return (
     <div className="homepage">
       <Container fluid>
@@ -17,6 +60,11 @@ const Home = ({ apiBeaches }) => {
             </header>
           </Col>
         </Row>
+    <Row><Col>
+      <SearchBar
+            input={this.state.searchInputValue}
+            inputChangeHandler={this.handleChange}
+            inputSubmitHandler={this.handleSubmit} /></Col></Row>
         <Row>
           {apiBeaches.map((beach) => (
             <Col xs={12} sm={6} md={6} lg={4}>
@@ -32,8 +80,14 @@ const Home = ({ apiBeaches }) => {
           ))}
         </Row>
       </Container>
-    </div>
+    <div>
+      
+
+      
+  
+    
   );
+}
 };
 
 export default Home;
