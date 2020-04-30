@@ -1,52 +1,51 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import Beach from "./Beach";
-import { Container, Row, Col } from "react-bootstrap";
-import logo from "../image/logotipo.svg";
-import "./Home.scss";
-import SearchBar from "./SearchBar";
-import ModalPopup from "./ModalPopup";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Beach from './Beach';
+import { Container, Row, Col } from 'react-bootstrap';
+import logo from '../image/logotipo.svg';
+import './Home.scss';
+import SearchBar from './SearchBar';
+import ModalPopup from './ModalPopup';
+import Footer from './Footer';
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchBeachValue: "",
+      searchBeachValue: '',
       isPopupShowing: false,
     };
   }
 
-  handleModal = () => {     
-      const { isPopupShowing } = this.state;     
-      this.setState({ isPopupShowing: !isPopupShowing });   
-    };
+  handleModal = () => {
+    const { isPopupShowing } = this.state;
+    this.setState({ isPopupShowing: !isPopupShowing });
+  };
 
   handleChange = (event) => {
     this.setState({ searchBeachValue: event.target.value });
   };
 
   handleSubmit = () => {
-
     let searchBeachValue = this.state.searchBeachValue;
 
-     let beaches = this.props.apiBeaches;
+    let beaches = this.props.apiBeaches;
 
-        beaches = beaches.filter((beach) => {
-            if (
-                beach.location.city.toLowerCase() === searchBeachValue.toLowerCase() ||
-                beach.title.toLowerCase().includes(searchBeachValue.toLowerCase())
-              ) {
-                return beach;
-                } 
-              }
-        )
-        console.log(beaches)
+    beaches = beaches.filter((beach) => {
+      if (
+        beach.location.city.toLowerCase() === searchBeachValue.toLowerCase() ||
+        beach.title.toLowerCase().includes(searchBeachValue.toLowerCase())
+      ) {
+        return beach;
+      }
+    });
+    console.log(beaches);
 
-        if (!beaches.length) {
-            this.handleModal();         
-        } else { 
-            this.props.updateBeachHandler(beaches);
-        }
+    if (!beaches.length) {
+      this.handleModal();
+    } else {
+      this.props.updateBeachHandler(beaches);
+    }
   };
 
   render() {
@@ -64,7 +63,7 @@ class Home extends React.Component {
           </Row>
           <Row>
             <Col
-            className="text-center"
+              className="text-center"
               xs={12}
               sm={{ span: 10, offset: 1 }}
               md={{ span: 8, offset: 2 }}
@@ -75,7 +74,11 @@ class Home extends React.Component {
                 inputChangeHandler={this.handleChange}
                 inputSubmitHandler={this.handleSubmit}
               />
-            <ModalPopup city={this.state.searchBeachValue} show={this.state.isPopupShowing} handlemodal={this.handleModal} />
+              <ModalPopup
+                city={this.state.searchBeachValue}
+                show={this.state.isPopupShowing}
+                handlemodal={this.handleModal}
+              />
             </Col>
           </Row>
           <Row>
@@ -97,6 +100,7 @@ class Home extends React.Component {
             ))}
           </Row>
         </Container>
+        <Footer />
       </div>
     );
   }
