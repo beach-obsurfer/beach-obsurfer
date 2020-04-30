@@ -9,7 +9,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      beaches: [],
+      beaches: JSON.parse(localStorage.getItem('beaches')) || [],
     };
   }
 
@@ -34,6 +34,7 @@ class App extends React.Component {
       this.setState({
         beaches: response.data.result.webcams,
       });
+      localStorage.setItem('beaches', JSON.stringify(response.data.result.webcams));
     });
   }
 
