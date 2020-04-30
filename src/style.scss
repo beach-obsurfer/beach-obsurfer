@@ -1,15 +1,20 @@
 /* make the customizations */
-$background-image: linear-gradient(to right top, #fddd5c, #fce56b, #fced79, #fcf588, #fdfd97);
 
-$font-primary: "Pacifico",
-cursive;
-$font-secondary: "Open Sans",
-sans-serif;
+//fonts:
+$font-primary: "Pacifico", cursive;
+$font-secondary: "Open Sans", sans-serif;
+
+//colors:
 $orange: #ffb449;
 $yellow: #fddd5c;
 $yellowlight: #fdfd97;
 $bluelight: #afc9cf;
 $blue: #789fcc;
+$greylight: #a0a0a0;
+$background-image: linear-gradient(to right top, #fddd5c, #fce56b, #fced79, #fcf588, #fdfd97);
+$button: linear-gradient(to right top, #789fcc, #7fabcd, #8cb6cd, #9cc0cd, #afc9cf);
+$button-hover: linear-gradient(to right top, #afc9cf, #9cc0cd, #8cb6cd, #7fabcd, #789fcc);
 
+//imports bootstrap + google fonts:
 @import "~bootstrap/scss/bootstrap";
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family==Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300&family=Pacifico&display=swap');
