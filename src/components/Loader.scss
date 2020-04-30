@@ -1,0 +1,26 @@
+@import "../style";
+
+.loader-wrapper {
+    width: 100%;
+    height: 100vh;
+    background-image: $background-image;
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding-top: 200px;
+
+    .logo {
+        width: 300px;
+        margin-bottom: 30px;
+    }
+
+    .spinner-border {
+        display: block;
+        margin: 0 auto;
+        width: 240px;
+        color: $blue;
+        animation: spinner-border 1s linear infinite;
+    }
+    
+}
