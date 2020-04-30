@@ -1,9 +1,10 @@
 import React from 'react';
+import './Footer.scss';
 
-function Footer() {
+const Footer = () => {
   return (
     <footer>
-      Created by
+      <span> Created by 🏖️ </span>
       <a
         href="https://github.com/Arnaud75020"
         target="_blank"
@@ -37,6 +38,6 @@ function Footer() {
       </a>
     </footer>
   );
-}
+};
 
 export default Footer;

@@ -1,18 +1,21 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import Beach from "./Beach";
-import { Container, Row, Col } from "react-bootstrap";
-import logo from "../image/logotipo.svg";
-import "./Home.scss";
-import SearchBar from "./SearchBar";
-import ModalPopup from "./ModalPopup";
+
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Beach from './Beach';
+import { Container, Row, Col } from 'react-bootstrap';
+import logo from '../image/logotipo.svg';
+import './Home.scss';
+import SearchBar from './SearchBar';
+import ModalPopup from './ModalPopup';
+import Footer from './Footer';
 import Loader from "./Loader";
+
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchBeachValue: "",
+      searchBeachValue: '',
       isPopupShowing: false,
     };
   }
@@ -52,7 +55,9 @@ class Home extends React.Component {
     const { apiBeaches, isPageLoaded } = this.props;
     return (
       <div className="homepage">
+      
         {isPageLoaded ? (
+      <ModalPopup city={this.state.searchBeachValue} show={this.state.isPopupShowing} handlemodal={this.handleModal} />
           <Container fluid>
             <Row>
               <Col xs={12} sm={12} md={12} lg={12}>
@@ -101,6 +106,7 @@ class Home extends React.Component {
               ))}
             </Row>
           </Container>
+<Footer />
         ) : (
           <Loader />
         )}

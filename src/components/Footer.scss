@@ -1,0 +1,29 @@
+@import '../style';
+
+footer {
+  padding-top: 30px;
+  padding-bottom: 40px;
+  font-size: 18px;
+  color: $yellowlight;
+  background-color: $orange;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+footer a {
+  color: $yellowlight;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: $blue;
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding-top: 15px;
+    padding-bottom: 25px;
+    font-size: 15px;
+  }
+}
