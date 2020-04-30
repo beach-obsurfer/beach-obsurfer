@@ -10,3 +10,8 @@ button {
 h2 {
   font-family: $font-primary;
 }
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
