@@ -36,13 +36,10 @@ class Home extends React.Component {
                     return beach
                } else if (
                   beach.title.toLowerCase().includes(searchBeachValue.toLowerCase()) 
-               ){
-                return beach
-               } 
+               ) return beach
             })
             this.props.updateBeachHandler(beaches);
             });
-            event.preventDefault()
         }
     
 
