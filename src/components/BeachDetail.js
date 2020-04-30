@@ -87,6 +87,7 @@ class BeachDetail extends React.Component {
             Food places
           </div>
         </div>
+
         <iframe
           width="300"
           height="200"
