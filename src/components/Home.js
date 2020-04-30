@@ -53,6 +53,7 @@ class Home extends React.Component {
     const { apiBeaches } = this.props;
     return (
       <div className="homepage">
+        <ModalPopup city={this.state.searchBeachValue} show={this.state.isPopupShowing} handlemodal={this.handleModal} />
         <Container fluid>
           <Row>
             <Col xs={12} sm={12} md={12} lg={12}>
@@ -75,7 +76,6 @@ class Home extends React.Component {
                 inputChangeHandler={this.handleChange}
                 inputSubmitHandler={this.handleSubmit}
               />
-            <ModalPopup city={this.state.searchBeachValue} show={this.state.isPopupShowing} handlemodal={this.handleModal} />
             </Col>
           </Row>
           <Row>

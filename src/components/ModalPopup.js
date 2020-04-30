@@ -1,28 +1,28 @@
 import React from 'react';
-import { Button, Modal } from 'react-bootstrap';
+import { Modal } from 'react-bootstrap';
 import PropTypes from 'prop-types';
+import './ModalPopup.scss';
 
 function ModalPopup(props) {
 const { handlemodal, show, city } = props;
 return (
-    <div>
-    <Modal
+    <Modal 
+        className="modal-search"
         show={show}
         aria-labelledby="contained-modal-title-vcenter"
         centered
     >
-        <Modal.Header>
-        <Modal.Title id="contained-modal-title-vcenter">
+        <Modal.Title className="modal-text-alert" id="contained-modal-title-vcenter">
             Sorry, no beach in {city}, please try again !
         </Modal.Title>
-        </Modal.Header>
-        <Modal.Footer>
-        <Button className="modal-button" onClick={handlemodal}>
-            Close
-        </Button>
-        </Modal.Footer>
+
+        <button
+        type="button"
+        onClick={handlemodal}>
+            Close   
+        </button>
+
     </Modal>
-    </div>
 );
 }
 ModalPopup.propTypes = {
