@@ -43,7 +43,7 @@ class App extends React.Component {
       <Router>
         <Switch>
           <Route exact path="/">
-            <Home apiBeaches={beaches} />
+            <Home apiBeaches={beaches} updateBeachHandler={(beaches) => this.setState({beaches})} />
           </Route>
           <Route
             path="/beach/:beachId"

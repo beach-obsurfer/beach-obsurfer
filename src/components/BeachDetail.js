@@ -53,7 +53,7 @@ class BeachDetail extends React.Component {
     return (
       <div>
         <Link to={`../`}>Homepage</Link>
-        <h1></h1>
+        <h1>{this.state.title}</h1>
         <iframe
           width="300"
           height="200"
