@@ -1,27 +1,27 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { Container, Row, Col } from "react-bootstrap";
-import Footer from "./Footer";
-import "./BeachDetail.scss";
-import localizationicon from "../image/localization-blue.svg";
-import arrowlefticon from "../image/arrow-left-blue.svg";
-import surficon from "../image/surf-blue.svg";
-import beachicon from "../image/beach-blue.svg";
-import coffeeicon from "../image/coffee-blue.svg";
-import peticon from "../image/pet-blue.svg";
-import logo from "../image/logotipo.svg";
-import wavesicon from "../image/waves-orange.svg";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Container, Row, Col } from 'react-bootstrap';
+import Footer from './Footer';
+import './BeachDetail.scss';
+import localizationicon from '../image/localization-blue.svg';
+import arrowlefticon from '../image/arrow-left-blue.svg';
+import surficon from '../image/surf-blue.svg';
+import beachicon from '../image/beach-blue.svg';
+import coffeeicon from '../image/coffee-blue.svg';
+import peticon from '../image/pet-blue.svg';
+import logo from '../image/logotipo.svg';
+import wavesicon from '../image/waves-orange.svg';
 
 class BeachDetail extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: "",
-      status: "",
-      title: "",
-      locationCity: "",
-      imageCurrentPreview: "",
-      playerLifetimeEmbed: "",
+      id: '',
+      status: '',
+      title: '',
+      locationCity: '',
+      imageCurrentPreview: '',
+      playerLifetimeEmbed: '',
     };
   }
 
@@ -164,12 +164,8 @@ class BeachDetail extends React.Component {
               ></iframe>
             </Col>
           </Row>
-          <Row>
-            <Col xs={12} sm={12} md={12} lg={12}>
-              <Footer />
-            </Col>
-          </Row>
         </Container>
+        <Footer />
       </div>
     );
   }
