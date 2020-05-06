@@ -1,68 +1,20 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Beach Obsurfer
 
-## Available Scripts
+A **28h Hackathon** project developed remotely during the Web Development course at _Wild Code School - Lisbon_ by **Arnaud Duhé**, **Filipa Marta** and **Isadora Hillebrand**.
+You can check our project live here (at Netlify):[Link](https://heuristic-babbage-442cdb.netlify.app/)
 
-In the project directory, you can run:
+#### The Idea
 
-### `yarn start`
+We received “Travel from the sofa” and two API’s as a briefing. After brainstorm, our decision was to make a COVID19-friendly digital platform to keep the population updated about social/weather conditions of the best beaches in Portugal by giving the opportunity to observe them throughout webcams (live mode). Our app also offered the chance to “web travel” and relax without leaving home. To do so, we chose **Windy API https://api.windy.com/**. We named our project: _Beach Obsurfer_.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### The Development
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+We draw two wireframes: Homepage and Detail page. We setup the GitHub environment using Git and an organization account with two branches: master (blocked for commits) and develop. To build the project we used Netlify. We setup a Trello board with Scrum and defined the boilerplate for the project with React, Bootstrap, SASS, HTML, React Router, Google fonts. We used Visual Code Studio to write the code and for visual interface design, Sketch. To prepare the presentation we used Google Slides. Everything in this project was made remotely through Google Hangouts meetings.
 
-### `yarn test`
+#### Our Role
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+We worked together on the brainstorm, wireframes, setup the GitHub and Trello environment. We worked together on the set up of the React App as well as main major components to do the MVP (minimal viable product) to GET the information from the API. Then we split the coding part between “user stories”. Arnaud Duhé worked on the Search bar and on the Modal to show the search results. Filipa Marta worked on the pages Router and on the Loader. Isadora Hillebrand worked on the Footer, on the Modal to show the search results and the final presentation. Web design and general style of the application was managed by Filipa. We worked all together remotely, taking doubts, discussing ideas and being there to one another when Git came into stage. Together we presented our project to Brussels, Bucarest and Lisbon campuses and on April 30th, 2020.
 
-### `yarn build`
+#### Tech && Methodologies
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Visual Code Studio, HTML5, React JS, SCSS, JS, React Bootstrap, GitHub, Netlify, Git, Sketch, Google Slides, Google Hangouts, Google Fonts, Trello, Terminal, MockupFlow
