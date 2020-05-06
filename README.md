@@ -7,6 +7,10 @@ You can check our project live here (at Netlify):[Link](https://heuristic-babbag
 
 We received “Travel from the sofa” and two API’s as a briefing. After brainstorm, our decision was to make a COVID19-friendly digital platform to keep the population updated about social/weather conditions of the best beaches in Portugal by giving the opportunity to observe them throughout webcams (live mode). Our app also offered the chance to “web travel” and relax without leaving home. To do so, we chose **Windy API https://api.windy.com/**. We named our project: _Beach Obsurfer_.
 
+
+![Beach Obsurfer](https://github.com/beach-obsurfer/beach-obsurfer/blob/master/src/image/beach-obsurfer_github.png)
+
+
 #### The Development
 
 We draw two wireframes: Homepage and Detail page. We setup the GitHub environment using Git and an organization account with two branches: master (blocked for commits) and develop. To build the project we used Netlify. We setup a Trello board with Scrum and defined the boilerplate for the project with React, Bootstrap, SASS, HTML, React Router, Google fonts. We used Visual Code Studio to write the code and for visual interface design, Sketch. To prepare the presentation we used Google Slides. Everything in this project was made remotely through Google Hangouts meetings.
