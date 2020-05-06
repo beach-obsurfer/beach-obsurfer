@@ -18,7 +18,7 @@ class App extends React.Component {
       this.getBeaches();
   }
 
-  getBeaches() {
+  getBeaches = () => {
     const apiKey = "key=xaJX84ccYJ93CJwroxGVNlxvHshmxJVV";
     const apiCountry = "country=PT";
     const apiBeaches = "category=beach";
@@ -32,10 +32,10 @@ class App extends React.Component {
     const url = `https://api.windy.com/api/webcams/v2/list/${apiCountry}/${apiLimit}/${apiBeaches}/${apiPopularity}?show=webcams:image,location,player&${apiKey}`;
 
     axios.get(url).then((response) => {
-      this.setState({
-        beaches: response.data.result.webcams,
-        isPageLoaded: true,
-      });
+     this.setState({
+       beaches: response.data.result.webcams,
+       isPageLoaded: true,
+     });
       localStorage.setItem(
         "beaches",
         JSON.stringify(response.data.result.webcams)
@@ -53,6 +53,7 @@ class App extends React.Component {
               apiBeaches={beaches}
               isPageLoaded={isPageLoaded}
               updateBeachHandler={(beaches) => this.setState({ beaches })}
+              getBeaches={this.getBeaches}
             />
           </Route>
           <Route

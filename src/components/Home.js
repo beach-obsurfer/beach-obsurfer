@@ -27,26 +27,30 @@ class Home extends React.Component {
     this.setState({ searchBeachValue: event.target.value });
   };
 
+ componentDidUpdate (prevProps, prevState) {
+  if(prevState.searchBeachValue !== this.state.searchBeachValue) {
+    this.props.getBeaches();
+  }
+ }
+
   handleSubmit = () => {
     let searchBeachValue = this.state.searchBeachValue;
-
     let beaches = this.props.apiBeaches;
 
-    beaches = beaches.filter((beach) => {
-      if (
-        beach.location.city.toLowerCase() === searchBeachValue.toLowerCase() ||
-        beach.title.toLowerCase().includes(searchBeachValue.toLowerCase())
-      ) {
-        return beach;
-      }
-    });
-    console.log(beaches);
+      beaches = beaches.filter((beach) => {
+        if (
+          beach.location.city.toLowerCase() === searchBeachValue.toLowerCase() ||
+          beach.title.toLowerCase().includes(searchBeachValue.toLowerCase())
+        ) {
+          return beach;
+        }
+      });
 
-    if (!beaches.length) {
-      this.handleModal();
-    } else {
-      this.props.updateBeachHandler(beaches);
-    }
+      if (!beaches.length) {
+        this.handleModal();
+      } else {
+        this.props.updateBeachHandler(beaches);
+      }   
   };
 
   render() {
